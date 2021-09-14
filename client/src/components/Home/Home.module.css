@@ -1,0 +1,44 @@
+.img{
+    background-image: url('https://dbdzm869oupei.cloudfront.net/img/alfombretaratoli/preview/40906.png');
+    background-repeat: no-repeat center;
+    min-height: 800px;
+}
+
+.loading{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://cdn.eteknix.com/wp-content/uploads/2015/12/loading.png');
+    background-size: cover;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 95%;
+    justify-content: space-around;
+    margin: auto
+}
+
+.card{
+    width: calc((100% - 80px) /5 );
+    margin-bottom: 5px;
+    height: 450px;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.titulo{
+    color: rgb(230, 4, 230);
+}
+
+.create{
+    text-decoration: none;
+    margin-left: 800px;
+    font-size: 20px;
+    margin-top: 200px;
+    color: cornsilk;
+}

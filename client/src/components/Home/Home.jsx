@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { createdGames, filterByGenre, getAllVideoGames, getGenres, orderByName } from '../actions/index';
-import Card from './Card';
-import Paginado from './Paginado';
+import { createdGames, filterByGenre, getAllVideoGames, getGenres, orderByName } from '../../actions/index';
+import Card from '../Card/Card';
+import NavBar from '../NavBar';
+import Paginado from '../Paginado';
+import style from './Home.module.css';
 
 function Home() {
 
@@ -54,12 +56,13 @@ function Home() {
 
     return(
         
-        <div>
+        <div className={style.img}>
             {
-                loading ? <h1> loading </h1> : <>
+                loading ? <h1 className={style.loading}> loading </h1> : <>
             
-            <Link to = '/addgame'> Crea tu propio videogame</Link>
-                <h1>Api Games</h1>
+            <Link to = '/addgame' className={style.create}> Crea tu propio videogame</Link>
+                <h1 className={style.titulo}>Api Games</h1>
+                <NavBar/>
                     <button onClick={e=>{handleOnClick(e)}}  >
                         Volver a cargar los videojuegos
                     </button>
@@ -91,16 +94,21 @@ function Home() {
             paginado={paginado}
 
             />
-
+            <div className={style.content}>
             {
                 currentGame && currentGame.map(v=>{
                     return(
-                        <Link to = {`/gamedetail/${v.id}` } key={currentGame.id}>
-                            <Card  name={v.name} genres={v.genres} image={v.image}/>
-                        </Link>
+                        <div className={style.card}>
+                            <Link  to = {`/gamedetail/${v.id}` }  key={v.id} className={style.link}>
+                                
+                                <Card  name={v.name} genres={v.genres } image={v.image}/>
+                               
+                            </Link>
+                        </div>
                     )
                 })
             }
+            </div>
             </>
             }
         </div>

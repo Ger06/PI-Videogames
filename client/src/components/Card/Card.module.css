@@ -1,0 +1,47 @@
+.card{
+    width: 100% ;   
+    padding-top: 10px;
+    overflow: hidden;
+    height: 370px;
+    
+}
+.details{
+    color: white;
+    background-color: gray;
+    display: flex;
+    padding-left: 10px;
+    width: 105px;
+    border-radius: 15px;
+}
+
+
+.card:hover .details{
+    transform: translateY(-50px); 
+    transition: transform 500ms ease;
+}
+
+.image{
+    width: 100%;
+    height: 250px;
+    align-items: flex-end;
+    cursor: pointer;
+    border-radius: 10px;
+    flex-direction: column;
+    transition: transform 500ms ease;
+    
+}
+.image:hover{
+    transform: scale(1.05);
+    opacity: 0.5;
+
+} 
+
+
+.top{
+    height: 100px;
+}
+
+.title{
+    color: white;
+    
+}

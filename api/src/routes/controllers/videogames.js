@@ -22,7 +22,7 @@ const getApiVideogames = async(req, res, next) => {
         return {
             name: g.name,
             image: g.background_image,
-            genres: g.genres.map(g=> g.name),
+            genres: g.genres.map(g=> g.name+' '),
             id : g.id
         }
 
@@ -53,7 +53,7 @@ const getAllGames = async (req, res, next) =>{
     dbGames = dbGames.map(db=>{
         return {
             name: db.name,
-            genres: db.genres.map(g=>g.name),
+            genres: db.genres.map(g=>g.name+' '),
             id : db.id
         }
     })
