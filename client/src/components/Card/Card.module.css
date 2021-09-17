@@ -1,3 +1,7 @@
+.error{
+    background-image: url('https://blogs.unsw.edu.au/nowideas/files/2018/11/error-no-es-fracaso.jpg');
+}
+
 .card{
     width: 100% ;   
     padding-top: 10px;

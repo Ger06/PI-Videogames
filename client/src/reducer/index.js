@@ -1,4 +1,4 @@
-import {ADD_NEW_GAME, ALL_GENRES, FILTER_BY_GENRE, GET_GAME_BY_NAME, GET_POST, GET_VIDEOGAMES, ORDER_BY_NAME, ORIGIN_GAME, RECEIVE_POST, VIDEOGAME_DETAIL} from '../constantes'
+import {ADD_NEW_GAME, ALL_GENRES, FILTER_BY_GENRE, GET_GAME_BY_NAME, GET_POST, GET_VIDEOGAMES, ORDER_BY_NAME, ORDER_BY_RATING, ORIGIN_GAME, RECEIVE_POST, VIDEOGAME_DETAIL} from '../constantes'
 
 const initialState = {
     videogames: [],
@@ -35,8 +35,8 @@ function rootReducer(state = initialState, action) {
             }
         case ORIGIN_GAME:
             let originGame = ''
-            if (action.payload !== 'all') { originGame = (action.payload === 'created' ? state.allVideoGames.filter(g=> g.id.length > 8) :
-                 state.allVideoGames.filter(g=>typeof g.id === 'number'))}
+            if (action.payload !== 'all') { originGame = (action.payload === 'created' ? state.videogames?.filter(g=> g.id.length > 8) :
+                 state.videogames?.filter(g=>typeof g.id === 'number'))}
             return {
                 ...state,
                 videogames: action.payload === 'all' ? state.allVideoGames : originGame
@@ -64,6 +64,30 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 videogames: sortedArr
+            }
+        case ORDER_BY_RATING:
+            let orderRating = action.payload === 'menor' ?
+                state.videogames.sort( function (a, b) {
+                    if (a.rating > b.rating){
+                        return 1;
+                    }
+                    if (b.rating > a.rating){
+                        return -1;
+                    }
+                    return 0;
+                }):
+                state.videogames.sort(function (a, b) {
+                    if (a.rating > b.rating){
+                        return -1
+                    }
+                    if (b.rating > a.rating){
+                        return 1
+                    }
+                    return 0;
+                })
+                return {
+                    ...state,
+                    videogames: orderRating
             }
         case GET_GAME_BY_NAME:
             return{

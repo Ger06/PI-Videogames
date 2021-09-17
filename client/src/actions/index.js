@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {VIDEOGAMES_URL, GET_VIDEOGAMES, FILTER_BY_GENRE, ORIGIN_GAME, 
     ORDER_BY_NAME, GET_GAME_BY_NAME, VIDEOGAME_URL, GENRE_URL, ALL_GENRES, 
-    ADD_NEW_GAME, VIDEOGAME_DETAIL, GET_POST, RECEIVE_POST} from '../constantes.js'
+    ADD_NEW_GAME, VIDEOGAME_DETAIL, GET_POST, RECEIVE_POST, ORDER_BY_RATING} from '../constantes.js'
 
 
 export function getAllVideoGames() {
@@ -108,6 +108,13 @@ export function createdGames(payload) {
 export function orderByName (payload) {
     return{
         type: ORDER_BY_NAME,
+        payload
+    }
+}
+
+export function orderByRating (payload) {
+    return{
+        type: ORDER_BY_RATING,
         payload
     }
 }

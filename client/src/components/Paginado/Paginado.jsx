@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import pages from './Paginado.module.css'
 
 function Paginado({gamesPerPage, allVideoGames, paginado}) {
     
@@ -15,7 +16,7 @@ function Paginado({gamesPerPage, allVideoGames, paginado}) {
                     pageNumbers && pageNumbers.map(number=>{
                         return (
                         <span key={number}>
-                        <a onClick={()=> paginado(number)}> {number}- </a>
+                        <a onClick={()=> paginado(number)} className={pages.numbers}>  {number}- </a>
                         </span>
                         )
                     })

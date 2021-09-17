@@ -7,18 +7,31 @@ const { Videogame, conn } = require('../../src/db.js');
 const agent = session(app);
 const videogame = {
   name: 'Super Mario Bros',
+ 
+  
 };
 
-describe('Videogame routes', () => {
+
+describe('Videogames routes', () => {
   before(() => conn.authenticate()
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
   }));
-  beforeEach(() => Videogame.sync({ force: true })
-    .then(() => Videogame.create(videogame)));
+  beforeEach(() => Videogame.sync({ force: true }))
+    
   describe('GET /videogames', () => {
-    it('should get 200', () =>
-      agent.get('/videogames').expect(200)
-    );
-  });
+		it('responds with 200', async () => {
+			try {
+				await agent.get('/videogames').expect(200);
+			} catch (err) {
+				console.log(err);
+			}
+		}).timeout(47000);
+    it('If the name query is passed, the videogame name should respond by that name', async () => {
+			try {
+				const res = await agent.get('/videogames?name=portal');
+				expect(res.body[0].name).to.be.equal('portal');
+			} catch (err) {}
+		}).timeout(47000);
 });
+})

@@ -26,11 +26,11 @@ function validate(form){
         if(!dNum && dNum !== 0)  {errors.released = '* Valor no válido, fecha no valida'}
         // return d.toISOString().slice(0,10) === dateString;
     }
-    if(form.rating && (form.rating < 0 || form.rating > 10)){ errors.rating = '* Valor de rating no valido'}
+    if(form.rating && (form.rating < 0 || form.rating > 5)){ errors.rating = '* Valor de rating no valido'}
     return errors
 }
 
-export function CreateGame() {
+export  function CreateGame() {
     const dispatch = useDispatch();
     const history = useHistory()
     const genres = useSelector(state => state.genres)
@@ -123,7 +123,7 @@ export function CreateGame() {
                         </div>
                         <div className={create.rating}>
                         <label className={create.label}>Rating: </label>
-                        <input type='float' value={form.rating} name= 'rating' onChange={e=>handleOnChange(e)} placeholder= '0-10'/>
+                        <input type='float' value={form.rating} name= 'rating' onChange={e=>handleOnChange(e)} placeholder= '0-5'/>
                         {errors.description && (
                             <p className = 'danger'>{errors.rating}</p>
                         )}
@@ -147,7 +147,7 @@ export function CreateGame() {
                             )}
                         </div>
                         <div>
-                            <label className={create.label}>  Select Genres </label>
+                            <label className={create.label}>Select Genres</label>
                             <select name= 'genres' onChange={e=>handleGenres(e)}  required  > 
                             <option value="" > Seleccionar Géneros</option>
                                     
@@ -182,3 +182,5 @@ export function CreateGame() {
     )
 
 }
+
+export default CreateGame;

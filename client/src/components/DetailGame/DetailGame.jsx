@@ -26,7 +26,7 @@ function DetailGame() {
             <Link to='/home'>
                 <button className={image.volver}>VOLVER</button>
             </Link>
-            {loading ? <h1>loading</h1>:  
+            {loading ? <h1 className={image.loading}>loading</h1>:  
             <>
             {
                 detail?
@@ -43,7 +43,7 @@ function DetailGame() {
                         </div>
                     </div>
                     
-                    <img src={detail.image} className={image.imagen}/>
+                    <img src={detail.image ? detail.image : 'https://media.vandal.net/i/1280x720/8-2021/202181012523773_1.jpg.webp'} className={image.imagen}/>
                     <div className={image.info} >
                         <h1> {detail.name}</h1>
                         <h4>{detail.description?.replace(/<[^>]*>?/g, '')}</h4>

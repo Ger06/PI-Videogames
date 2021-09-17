@@ -51,7 +51,7 @@ const getGameId = async (req, res, next) => {
         }
         
     }
-    console.log(gameDetail)
+    // console.log(gameDetail)
     res.json(gameDetail);
 }
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { createdGames, filterByGenre, getAllVideoGames, getGenres, orderByName } from '../../actions/index';
+import { createdGames, filterByGenre, getAllVideoGames, getGenres, orderByName, orderByRating } from '../../actions/index';
 import Card from '../Card/Card';
 import NavBar from '../NavBar';
-import Paginado from '../Paginado';
+import Paginado from '../Paginado/Paginado';
 import style from './Home.module.css';
 
 function Home() {
@@ -24,7 +24,7 @@ function Home() {
     const [gamesPerPage, setGamesPerPage] = useState (15);
     const indexOfLastGame = currentPage * gamesPerPage;
     const indexOfFirstGame = indexOfLastGame - gamesPerPage;
-    const currentGame = allVideoGames.slice(indexOfFirstGame, indexOfLastGame)
+    const currentGame = allVideoGames?.slice(indexOfFirstGame, indexOfLastGame)
 
     const paginado = (pageNumber) =>{
         setCurrentPage (pageNumber)
@@ -53,6 +53,12 @@ function Home() {
         setCurrentPage(1);
         setOrden (`Ordenado ${e.target.value}`)
     }
+    function handleRating (e){
+        e.preventDefault();
+        dispatch(orderByRating(e.target.value));
+        setCurrentPage(1);
+        setOrden (`Ordenado ${e.target.value}`)
+    }
 
     return(
         
@@ -68,6 +74,7 @@ function Home() {
                     </button>
             <div>
                 <select onChange={e=>{handleSort(e)}}>
+                    <option value='' > Orden A-Z</option>
                     <option value = 'asc'>Ascendente</option>
                     <option value = 'desc'>Descendente</option>
                 </select>
@@ -85,12 +92,17 @@ function Home() {
                     <option value='api'>API Games</option>
                     <option value='created'>Creados</option>
                 </select>
+                <select onChange={e=>{handleRating(e)}}>
+                    <option value=''>Orden por Rating</option>
+                    <option value='mayor'>Mayor Rating</option>
+                    <option value='menor'>Menor Rating</option>
+                </select>
 
             </div>
 
             <Paginado 
             gamesPerPage={gamesPerPage}
-            allVideoGames={allVideoGames.length}
+            allVideoGames={allVideoGames?.length}
             paginado={paginado}
 
             />
@@ -101,7 +113,7 @@ function Home() {
                         <div className={style.card}>
                             <Link  to = {`/gamedetail/${v.id}` }  key={v.id} className={style.link}>
                                 
-                                <Card  name={v.name} genres={v.genres } image={v.image}/>
+                                <Card  name={v.name} genres={v.genres} image={v.image} rating={v.rating} />
                                
                             </Link>
                         </div>
