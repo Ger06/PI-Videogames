@@ -52,3 +52,6 @@ All images shown in this project were obtained from the internet and are used wi
     <img src='https://user-images.githubusercontent.com/82271110/137954833-4cb530cc-0f07-4f41-a3b1-29f173d6687c.png' </img>
 </p>
 
+### Detail Game
+![Detail](https://user-images.githubusercontent.com/82271110/137955991-c1a9a970-9fdd-49d2-abb8-37e403430c25.png)
+
