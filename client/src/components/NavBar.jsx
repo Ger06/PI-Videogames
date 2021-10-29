@@ -2,6 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import { getGameByName } from '../actions';
+import estilo from './NavBar.module.css'
 
 function NavBar() {
     const  dispatch = useDispatch();
@@ -21,15 +22,15 @@ function NavBar() {
     
    
     return (
-        <div>
-            <form onSubmit={e=>handleSubmit(e)}>
-                <input 
+        <div className={estilo.div}>
+            <form onSubmit={e=>handleSubmit(e)} className={estilo.form}>
+                <input className={estilo.input}
                     placeholder= 'Game Name...'
                     type = 'text'
                     onChange={e=>{handleInput(e)}}
                     value={games}
                     />
-                <button type= 'submit' >Buscar</button>
+                <button type= 'submit' className={estilo.button} >Buscar</button>
             </form>
         </div>
     )

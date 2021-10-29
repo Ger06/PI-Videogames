@@ -8,7 +8,7 @@ export function getAllVideoGames() {
     try {
         return async function (dispatch) {
             dispatch(getPost())
-            return axios.get(VIDEOGAMES_URL)
+            return axios.get('/videogames')
             .then(videogames=>{
                 dispatch({
                     type: GET_VIDEOGAMES,
@@ -28,7 +28,7 @@ export function getAllVideoGames() {
 export function getGameByName(payload) {
     try {
         return async function(dispatch){
-            return axios.get(`${VIDEOGAMES_URL}?name=${payload}`)
+            return axios.get(`/videogames?name=${payload}`)
             .then(videogames=>{
                 dispatch({
                     type: GET_GAME_BY_NAME,
@@ -45,7 +45,7 @@ export function gameDetail(id){
     try {
         return async  function (dispatch){
             dispatch(getPost())
-            return axios.get(VIDEOGAME_URL + id)
+            return axios.get('/videogame'+ id)
                 .then(videogame =>{
                     dispatch({
                         type: VIDEOGAME_DETAIL,
@@ -64,7 +64,7 @@ export function gameDetail(id){
 
 export function getGenres() {
     return async function(dispatch){
-        return axios.get (GENRE_URL)
+        return axios.get ('/genres')
         .then(genres=>{
             dispatch ({
                 type: ALL_GENRES,
@@ -78,7 +78,7 @@ export function getGenres() {
 export function addNewGame(payload) {
     try {
         return async function(dispatch){
-            return axios.post (VIDEOGAME_URL, payload)
+            return axios.post ('/videogame', payload)
             .then(game=>{
                 dispatch({
                     type: ADD_NEW_GAME,

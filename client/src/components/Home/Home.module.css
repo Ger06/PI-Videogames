@@ -1,16 +1,17 @@
 .img{
-    background-image: url('https://dbdzm869oupei.cloudfront.net/img/alfombretaratoli/preview/40906.png');
+    background-image: url('../../image/home.png');
     background-repeat: no-repeat center;
     min-height: 800px;
 }
 
 .loading{
-    height: 100vh;
+    height: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('https://cdn.eteknix.com/wp-content/uploads/2015/12/loading.png');
-    background-size: cover;
+    background-image: url('../../image/loading.jpg');
+    background-repeat: repeat;
+
 }
 
 .content{
@@ -32,13 +33,52 @@
 }
 
 .titulo{
-    color: rgb(230, 4, 230);
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
 }
 
 .create{
-    text-decoration: none;
     margin-left: 800px;
     font-size: 20px;
     margin-top: 200px;
-    color: cornsilk;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+    
+}
+
+.cargar{
+    border-radius: 15px;
+    background-color: #006184;
+    color: white;
+    margin-top: 18px;
+    border-color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+.select{
+    padding-top: 18px;
 }

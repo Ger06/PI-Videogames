@@ -26,7 +26,7 @@ function DetailGame() {
             <Link to='/home'>
                 <button className={image.volver}>VOLVER</button>
             </Link>
-            {loading ? <h1 className={image.loading}>loading</h1>:  
+            {loading ? <h1 className={image.loading}></h1>:  
             <>
             {
                 detail?

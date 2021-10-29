@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useHistory } from 'react-router-dom';
 import { addNewGame, getGenres } from '../../actions';
+import Boton from '../boton';
 import create from './CreateGame.module.css';
+
 
 function validate(form){
     let errors = {};
@@ -102,11 +104,11 @@ export  function CreateGame() {
 
     return (
         <div className={create.image} >
-            <Link to='/home'><button className={create.home}> Home</button></Link>
+            <Link to='/home'><button className={create.home}> HOME</button></Link>
             <form onSubmit={e=>handleOnSubmit(e)} className={create.form}>
                 <div>
                     <div className={create.name} >
-                        <label className={create.label}>Name: </label>
+                        <label className={create.label}>NAME: </label>
                         <input type='text' value={form.name} name= 'name' onChange={e=>handleOnChange(e)} placeholder= 'Videogame Name' required />
                         
                         {errors.name && (
@@ -115,14 +117,14 @@ export  function CreateGame() {
                     </div>
                     <div className={create.releasedrating}>
                         <div className={create.released}>
-                        <label className={create.label}>Released: </label>
+                        <label className={create.label}>RELEASED: </label>
                         <input type='text' value={form.released} placeholder='yyyy-mm-dd' name= 'released' onChange={e=>handleOnChange(e)}/>
                         {errors.released && (
                             <p className = 'danger'>{errors.released}</p>
                         )}
                         </div>
                         <div className={create.rating}>
-                        <label className={create.label}>Rating: </label>
+                        <label className={create.label}>RATING: </label>
                         <input type='float' value={form.rating} name= 'rating' onChange={e=>handleOnChange(e)} placeholder= '0-5'/>
                         {errors.description && (
                             <p className = 'danger'>{errors.rating}</p>
@@ -130,7 +132,7 @@ export  function CreateGame() {
                         </div>
                     </div>
                     <div className={create.description}>
-                        <label className={create.label}>Description: </label>
+                        <label className={create.label}>DESCRIPTION: </label>
                         <textarea type='text' value={form.description} name= 'description' rows="10" cols="50" onChange={e=>handleOnChange(e)} required/>
                         {errors.description && (
                             <p className = 'danger'>{errors.description}</p>
@@ -140,14 +142,14 @@ export  function CreateGame() {
                 <div className={create.platformsgenres}>
                     <div className={create.platforms}>
                         <div>
-                            <label className={create.label}>Platforms: </label>
+                            <label className={create.label}>PLATFORMS: </label>
                             <input type='text' placeholder='Playstation, Xbox...' value={form.platforms} name= 'platforms' onChange={e=>handlePlatforms(e)} required/>
                             {errors.platforms && (
                                 <p>{errors.platforms}</p>
                             )}
                         </div>
                         <div>
-                            <label className={create.label}>Select Genres</label>
+                            <label className={create.label}>SELECT GENRES</label>
                             <select name= 'genres' onChange={e=>handleGenres(e)}  required  > 
                             <option value="" > Seleccionar Géneros</option>
                                     
@@ -157,7 +159,7 @@ export  function CreateGame() {
                                     ))
                                 }
                             </select>
-                            <ul > ✅ Genres Selected
+                            <ul className={create.genres}> ✅ Genres Selected
                                 <ul>{form.genres.map(g=>
                                 <div key={g} className={create.lista}>
                                 {g} 
@@ -172,9 +174,9 @@ export  function CreateGame() {
                             )}
                         </div>
                     </div>
-                    <div className={create.btnposition}>
-                        <button type='submit' className={create.btn}>Agregar Videogame</button>
-                    </div>
+                        {/* <button type='submit' className={create.btn}>Agregar Videogame</button> */}
+                        <Boton funcion={()=>alert('funciona')} texto= {'CREAR VIDEOJUEGO'}/>
+                    
                 </div>                                          
             </form>
                 

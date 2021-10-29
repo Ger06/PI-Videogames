@@ -29,6 +29,7 @@ function Home() {
     const paginado = (pageNumber) =>{
         setCurrentPage (pageNumber)
     }
+        
 
   
     
@@ -64,15 +65,15 @@ function Home() {
         
         <div className={style.img}>
             {
-                loading ? <h1 className={style.loading}> loading </h1> : <>
+                loading ? <h1 className={style.loading}>  </h1> : <>
             
-            <Link to = '/addgame' className={style.create}> Crea tu propio videogame</Link>
-                <h1 className={style.titulo}>Api Games</h1>
+            <Link to = '/addgame' className={style.create}> CREA TU PROPIO VIDEOGAME</Link>
+                <h1 className={style.titulo}>API GAMES</h1>
                 <NavBar/>
-                    <button onClick={e=>{handleOnClick(e)}}  >
-                        Volver a cargar los videojuegos
+                    <button onClick={e=>{handleOnClick(e)}}  className={style.cargar} >
+                        VOLVER A CARGAR LOS JUEGOS
                     </button>
-            <div>
+            <div className={style.select}>
                 <select onChange={e=>{handleSort(e)}}>
                     <option value='' > Orden A-Z</option>
                     <option value = 'asc'>Ascendente</option>
@@ -110,7 +111,7 @@ function Home() {
             {
                 currentGame && currentGame.map(v=>{
                     return(
-                        <div className={style.card}>
+                        <div className={style.card} key={v.id}>
                             <Link  to = {`/gamedetail/${v.id}` }  key={v.id} className={style.link}>
                                 
                                 <Card  name={v.name} genres={v.genres} image={v.image} rating={v.rating} />

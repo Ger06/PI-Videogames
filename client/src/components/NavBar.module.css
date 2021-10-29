@@ -1,0 +1,49 @@
+:root{
+    --clr: #006184;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    border-radius: 120px;
+    overflow: hidden;
+}
+.div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.input{
+    padding-left: 8px;
+}
+.input:focus::placeholder{
+    color: var(--clr);
+    opacity: 0.85;
+}
+.button{
+    background: var(--clr);
+    color: white;
+    padding: 0.3em 2em;
+    cursor: pointer;
+}
+@media only screen and (min-width: 100px){
+    .form{
+        max-width: 300px;
+    }
+    .button{
+        margin-left: auto;
+        border-radius: 2em;
+        border-color: #fff;
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;;
+    }
+}

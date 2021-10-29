@@ -12,6 +12,19 @@
 
 .label{
     display: flex;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
+      -webkit-text-stroke: 0.30px black;
+      text-shadow: 2px 2px 8px #FF0000;
+      font-size: 20px;
 }
 
 .name{
@@ -50,9 +63,9 @@
 }
 
 .image{
-    background-image: url('https://screencraft.org/wp-content/uploads/2021/08/Write-for-Video-Games-scaled.jpg');
+    background-image: url('../../image/creategame.jpg');
     background-size: cover;
-    height: 720px;
+    height: 800px;
 }
 
 .btn{
@@ -60,11 +73,24 @@
     width: 100%;
     height: 30px;
     border-radius: 15px;
-    background-image: linear-gradient(45deg, white , green);
     font-style: unset;
+    border-radius: 15px;
+    background-color: #006184;
+    color: white;
+    margin-top: 18px;
+    border-color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
 }
 .btn:hover{
-    background-image: linear-gradient(135deg, green, white);
+    background-image: linear-gradient(135deg, rgb(206, 33, 206), white);
 }
 
 .btnposition{
@@ -84,6 +110,38 @@
     cursor: pointer;
     display: flex;
     margin-left: 100px;
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    font-style: unset;
+    border-radius: 15px;
+    background-color: #006184;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+.genres{
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #0fa,
+      0 0 82px #0fa,
+      0 0 92px #0fa,
+      0 0 102px #0fa,
+      0 0 151px #0fa;
 }
 
 
