@@ -68,6 +68,7 @@
     color: white;
     margin-top: 18px;
     border-color: #fff;
+    cursor: pointer;
     text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
