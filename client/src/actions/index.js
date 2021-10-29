@@ -45,7 +45,7 @@ export function gameDetail(id){
     try {
         return async  function (dispatch){
             dispatch(getPost())
-            return axios.get('/videogame' + id)
+            return axios.get('/videogame/' + id)
                 .then(videogame =>{
                     dispatch({
                         type: VIDEOGAME_DETAIL,
