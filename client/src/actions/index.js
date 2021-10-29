@@ -78,7 +78,7 @@ export function getGenres() {
 export function addNewGame(payload) {
     try {
         return async function(dispatch){
-            return axios.post ('videogame', payload)
+            return axios.post ('/videogame', payload)
             .then(game=>{
                 dispatch({
                     type: ADD_NEW_GAME,
