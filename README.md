@@ -2,7 +2,7 @@
 
 # Individual Project - SPA Videogames
 
-<a href="https://spa-videogame.vercel.app" target="blank"> Visita el sitio Spa Videogames</a>
+<a href="https://spa-videogame.vercel.app" target="_blank"> Visita el sitio Spa Videogames</a>
 
 <p align="right">
   <img height="200" src="./videogame.png" />
