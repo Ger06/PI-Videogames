@@ -67,7 +67,7 @@ function Home() {
             {
                 loading ? <h1 className={style.loading}>  </h1> : <>
             
-            <Link to = '/addgame' className={style.create}> CREA TU PROPIO VIDEOGAME</Link>
+            <Link to = '/addgame' className={style.create}> CREATE A NEW VIDEOGAME</Link>
                 <h1 className={style.titulo}>API GAMES</h1>
                 <NavBar/>
                     <button onClick={e=>{handleOnClick(e)}}  className={style.cargar} >
