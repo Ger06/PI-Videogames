@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import {VIDEOGAMES_URL, GET_VIDEOGAMES, FILTER_BY_GENRE, ORIGIN_GAME, 
     ORDER_BY_NAME, GET_GAME_BY_NAME, VIDEOGAME_URL, GENRE_URL, ALL_GENRES, 
     ADD_NEW_GAME, VIDEOGAME_DETAIL, GET_POST, RECEIVE_POST, ORDER_BY_RATING} from '../constantes.js'
@@ -8,7 +8,7 @@ export function getAllVideoGames() {
     try {
         return async function (dispatch) {
             dispatch(getPost())
-            return axios.get('/videogames')
+            return axios.get(`/videogames`)
             .then(videogames=>{
                 dispatch({
                     type: GET_VIDEOGAMES,
@@ -45,7 +45,7 @@ export function gameDetail(id){
     try {
         return async  function (dispatch){
             dispatch(getPost())
-            return axios.get('/videogame/' + id)
+            return axios.get(`/videogame/${id}`)
                 .then(videogame =>{
                     dispatch({
                         type: VIDEOGAME_DETAIL,
@@ -64,7 +64,7 @@ export function gameDetail(id){
 
 export function getGenres() {
     return async function(dispatch){
-        return axios.get ('/genres')
+        return axios.get (`/genres`)
         .then(genres=>{
             dispatch ({
                 type: ALL_GENRES,
@@ -78,7 +78,7 @@ export function getGenres() {
 export function addNewGame(payload) {
     try {
         return async function(dispatch){
-            return axios.post ('/videogame', payload)
+            return axios.post (`/videogame`, payload)
             .then(game=>{
                 dispatch({
                     type: ADD_NEW_GAME,
