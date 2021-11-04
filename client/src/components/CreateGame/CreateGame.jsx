@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { addNewGame, getGenres } from '../../actions';
 import Boton from '../boton';
 import create from './CreateGame.module.css';
+import Swal from 'sweetalert2'
 
 
 function validate(form){
@@ -75,7 +76,8 @@ export  function CreateGame() {
         platforms: [],
         genres: []
         })
-        alert('Game Created')
+        Swal.fire({title:'Game Created',
+    icon: 'success'})
         history.push('/home')
     }
 
@@ -104,7 +106,9 @@ export  function CreateGame() {
 
     return (
         <div className={create.image} >
-            <Link to='/home'><button className={create.home}> HOME</button></Link>
+            <div className={create.btnhome}>
+                <Link to='/home'><button className={create.home}> HOME</button></Link>
+            </div>
             <form onSubmit={e=>handleOnSubmit(e)} className={create.form}>
                 <div>
                     <div className={create.name} >
@@ -151,7 +155,7 @@ export  function CreateGame() {
                         <div>
                             <label className={create.label}>SELECT GENRES</label>
                             <select name= 'genres' onChange={e=>handleGenres(e)}  required  > 
-                            <option value="" > Seleccionar Géneros</option>
+                            <option value="" > Genres</option>
                                     
                                 {
                                     genres && genres.map(g=>(
@@ -175,7 +179,7 @@ export  function CreateGame() {
                         </div>
                     </div>
                         {/* <button type='submit' className={create.btn}>Agregar Videogame</button> */}
-                        <Boton funcion={()=>alert('funciona')} texto= {'CREAR VIDEOJUEGO'}/>
+                        <Boton  texto= {'CREATE GAME'}/>
                     
                 </div>                                          
             </form>

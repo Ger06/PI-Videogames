@@ -30,7 +30,7 @@ function NavBar() {
                     onChange={e=>{handleInput(e)}}
                     value={games}
                     />
-                <button type= 'submit' className={estilo.button} >Buscar</button>
+                <button type= 'submit' className={estilo.button} >SEARCH</button>
             </form>
         </div>
     )

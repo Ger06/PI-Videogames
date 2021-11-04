@@ -1,5 +1,6 @@
 import React from 'react';
 import card from './Card.module.css'
+import mario from '../../image/mario.jpg'
 
 function Card({name, image, genres,rating}) {
     return (
@@ -8,8 +9,8 @@ function Card({name, image, genres,rating}) {
                 <h3 className={card.title}>{name}</h3>
                 <h5 className={card.title}>{genres}</h5>
             </div>
-            <img src={image ? image : 'https://media.vandal.net/i/1280x720/8-2021/202181012523773_1.jpg.webp'} alt= 'img not found' className={card.image} />
-            <div className={card.details}>Click to details</div>
+            <img src={image ? image : mario } alt= 'img not found' className={card.image} />
+            <div className={card.details}>Click for details</div>
             <div className={card.details}> ⭐ {rating}</div>
             
         </div>

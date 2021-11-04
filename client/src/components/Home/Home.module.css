@@ -59,6 +59,7 @@
       0 0 92px #0fa,
       0 0 102px #0fa,
       0 0 151px #0fa;
+      text-decoration: none;
     
 }
 
@@ -82,4 +83,8 @@
 
 .select{
     padding-top: 18px;
+}
+
+.newGame{
+    padding-top: 20px;
 }

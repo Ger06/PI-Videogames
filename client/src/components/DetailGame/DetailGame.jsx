@@ -24,7 +24,7 @@ function DetailGame() {
     return (
         <div className={image.pagina}>
             <Link to='/home'>
-                <button className={image.volver}>VOLVER</button>
+                <button className={image.volver}>BACK</button>
             </Link>
             {loading ? <h1 className={image.loading}></h1>:  
             <>

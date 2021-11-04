@@ -66,18 +66,19 @@ function Home() {
         <div className={style.img}>
             {
                 loading ? <h1 className={style.loading}>  </h1> : <>
-            
-            <Link to = '/addgame' className={style.create}> CREATE A NEW VIDEOGAME</Link>
+            <div className={style.newGame}>
+                <Link to = '/addgame' className={style.create}> CREATE A NEW VIDEOGAME</Link>
+            </div>
                 <h1 className={style.titulo}>API GAMES</h1>
                 <NavBar/>
                     <button onClick={e=>{handleOnClick(e)}}  className={style.cargar} >
-                        VOLVER A CARGAR LOS JUEGOS
+                        RELOAD GAMES
                     </button>
             <div className={style.select}>
                 <select onChange={e=>{handleSort(e)}}>
-                    <option value='' > Orden A-Z</option>
-                    <option value = 'asc'>Ascendente</option>
-                    <option value = 'desc'>Descendente</option>
+                    <option value='' > Order A-Z</option>
+                    <option value = 'asc'>A-Z</option>
+                    <option value = 'desc'>Z-A</option>
                 </select>
                 <select onChange = {e=>{handleFilterGenre(e)}}>
                     <option value = 'All Genres'>All Genres</option>
@@ -89,14 +90,14 @@ function Home() {
                     }
                 </select>
                 <select onChange={e=>{handleCreate(e)}}>
-                    <option value='all'>Todos los juegos</option>
+                    <option value='all'>All Games</option>
                     <option value='api'>API Games</option>
-                    <option value='created'>Creados</option>
+                    <option value='created'>Creates</option>
                 </select>
                 <select onChange={e=>{handleRating(e)}}>
-                    <option value=''>Orden por Rating</option>
-                    <option value='mayor'>Mayor Rating</option>
-                    <option value='menor'>Menor Rating</option>
+                    <option value=''>Order by Rating</option>
+                    <option value='mayor'>Higher Rating</option>
+                    <option value='menor'>Lower Rating</option>
                 </select>
 
             </div>
