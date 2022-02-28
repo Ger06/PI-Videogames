@@ -9,7 +9,7 @@
 </p>
 
 ### About
-In this SPA you will be able to search for recipes using multiple filters and you can also create your own recipes. This project was an individual assignment requested at soyHenry's bootcamp (and my first proyect ever!)
+In this SPA you will be able to search for recipes using multiple filters and you can also create your own game. This project was an individual assignment requested at soyHenry's bootcamp (and my first proyect ever!)
 
 - *Front-end*: React.js, Redux.js, plain CSS / CSS Modules.
 
